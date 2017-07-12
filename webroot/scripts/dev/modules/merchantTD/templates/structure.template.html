@@ -1,0 +1,41 @@
+<div>
+    <div>structure actor</div>
+    <div>time: {{$ctrl.time | number:0}}</div>
+    <div>location: {{$ctrl.location}}</div>
+
+    <div>
+        <div>{{$ctrl.wealth.Id}}:</div>
+        <div>{{$ctrl.wealth.Value | number:0}}</div>
+        <progress ng-value="$ctrl.wealth.Percentage" max="100"></progress>
+    </div>
+
+    <div>
+        Needs:
+        <div ng-repeat="need in $ctrl.needs">
+            <div>{{need.Id}}</div>
+            <div>{{need.Value | number:0}}</div>
+            <progress ng-value="need.Percentage" max="100"></progress>
+        </div>
+    </div>
+    <div>
+        Wants:
+        <div ng-repeat="want in $ctrl.wants">{{.want.Title}}</div>
+    </div>
+
+    
+    <div>
+        Resources:
+        <div ng-repeat="resource in $ctrl.resources">
+            <div>{{resource.Id}}</div>
+            <div>{{resource.Value | number:0}}</div>
+            <progress ng-value="resource.Percentage" max="100"></progress>
+        </div>
+    </div>
+
+    <!--
+    <div ng-transclude="components"></div>
+    -->
+
+    <ng-transclude></ng-transclude>
+
+</div>

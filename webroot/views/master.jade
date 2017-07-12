@@ -1,0 +1,28 @@
+doctype transitional
+html(ng-app="POTLModule")
+    head
+        meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+        title
+            | POTL
+        script(src="/scripts/angular.min.js")
+        script(src="main.js")
+        <link rel="stylesheet" type="text/css" href="css/potl.css">
+
+        block head
+        
+    body.world
+        city
+            entrance(x="0", y="2")
+            market(x="10" y="10")
+
+
+        structure(location="{x:50,y:300}", id="1")
+            producer(produce-id="'Apples'", produce-time="35000", produce-tags="['Food']") producer
+        structure(location="{x:400,y:300}", id="2")
+            provider provider
+            producer(produce-id="'Wood'", produce-time="35000", produce-tags="[]") producer
+        structure(location="{x:700,y:500}", id="3")
+            producer(produce-id="'Apples'", produce-time="35000", produce-tags="['Food']") producer
+            producer(produce-id="'Planks'", produce-req="'Wood'", produce-time="20000", produce-tags="['Construction']") producer
+
+        
